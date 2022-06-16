@@ -1,0 +1,363 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Big Shoulders Inline Text', cursive;
+    font-family: 'Bungee Hairline', cursive;
+    font-family: 'Iceland', cursive;
+    font-family: 'Train One', cursive;
+    font-family: 'Turret Road', cursive;
+    font-family: 'Rubik Glitch', cursive;
+    font-family: 'Goldman', cursive;
+}
+
+html,
+body {
+    box-sizing: border-box;
+
+}
+
+
+#wrap {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #272626, #8f1a1a, rgb(0, 96, 191), rgb(255, 210, 0)) left top/400% 400%;
+    position: relative;
+    animation: change-Bg 60s ease-in-out infinite running;
+}
+
+#tag {
+    color: white;
+    font-size: 24px;
+    font-family: 'Iceland', cursive;
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+
+    transform: translateX(-50%);
+    opacity: 1;
+    animation: showText 60s 1s ease-in-out infinite running;
+
+}
+
+@keyframes change-Bg {
+    0% {
+        background-position: 0% 0%;
+
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes showText {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+        font-size: 50px;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+@keyframes casualty {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.box {
+    width: 350px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: casualty 60s 1s ease-in-out infinite running;
+    box-shadow: inset 3px 3px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+#odometer {
+    font-size: 40px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    right: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: casualty 60s 1s ease-in-out infinite running;
+
+
+}
+
+.death {
+    /* color: rgb(150, 150, 150); */
+    color: #961f1f;
+    font-family: 'Rubik Glitch', cursive;
+    font-size: 40px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 12%;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: casualty 60s 1s ease-in-out infinite running;
+}
+
+/* #test{
+    width:300px;
+    height: 300px;
+    border: 2px solid black;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+.clock {
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 4px solid rgb(114, 185, 255);
+
+    box-shadow:
+        0 0 6px rgb(138, 196, 255),
+        0 0 30px rgb(114, 185, 255, 0.8),
+        0 0 30px rgb(114, 185, 255, 0.4),
+        0 0 20px rgb(114, 185, 255, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.clock::before {
+    content: "";
+    width: 350px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 4px solid rgb(114, 185, 255);
+    box-shadow:
+        0 0 6px rgb(138, 196, 255),
+        0 0 30px rgb(114, 185, 255, 0.8),
+        0 0 30px rgb(114, 185, 255, 0.4),
+        0 0 20px rgb(114, 185, 255, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: hueRotate 10s both infinite running;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes hueRotate {
+    0% {
+        filter: hue-rotate(0);
+        box-shadow:
+            0 0 6px rgb(138, 196, 255),
+            0 0 35px rgb(114, 185, 255, 0.8),
+            0 0 45px rgb(114, 185, 255, 0.4),
+            0 0 20px rgb(114, 185, 255, 0.2);
+    }
+
+    15% {
+        box-shadow:
+            0 10px 6px rgb(138, 196, 255),
+            0 10px 30px rgb(114, 185, 255, 0.8),
+            0 10px 30px rgb(114, 185, 255, 0.4),
+            0 10px 20px rgb(114, 185, 255, 0.2);
+    }
+
+    35% {
+        box-shadow:
+            5px 5px 6px rgb(138, 196, 255),
+            5px 5px 40px rgb(114, 185, 255, 0.8),
+            5px 5px 50px rgb(114, 185, 255, 0.4),
+            5px 5px 20px rgb(114, 185, 255, 0.2);
+    }
+
+    50% {
+        filter: hue-rotate(360deg);
+        box-shadow:
+            -5px -5px 6px rgb(138, 196, 255),
+            -5px -5px 35px rgb(114, 185, 255, 0.8),
+            -5px -5px 30px rgb(114, 185, 255, 0.4),
+            -5px -5px 20px rgb(114, 185, 255, 0.2);
+
+    }
+
+    65% {
+        box-shadow:
+            -10px 0px 6px rgb(138, 196, 255),
+            -10px 0px 40px rgb(114, 185, 255, 0.8),
+            -10px 0px 50px rgb(114, 185, 255, 0.4),
+            -10px 0px 20px rgb(114, 185, 255, 0.2);
+    }
+
+    75% {
+        box-shadow:
+            0px -10px 6px rgb(138, 196, 255),
+            0px -10px 40px rgb(114, 185, 255, 0.8),
+            0px -10px 35px rgb(114, 185, 255, 0.4),
+            0px -10px 20px rgb(114, 185, 255, 0.2);
+    }
+
+    100% {
+        filter: hue-rotate(0);
+        box-shadow:
+            0 0px 6px rgb(138, 196, 255),
+            0 0px 30px rgb(114, 185, 255, 0.8),
+            0 0px 45px rgb(114, 185, 255, 0.4),
+            0 0px 20px rgb(114, 185, 255, 0.2);
+    }
+}
+
+#hour {
+    width: 28%;
+    height: 6px;
+    background: rgb(255, 210, 0, 0.6);
+    box-shadow:
+        0 0 5px rgb(255, 210, 0),
+        0 0 10px rgb(255, 210, 0, 0.8),
+        0 0 10px rgb(255, 210, 0, 0.4),
+        0 0 6px rgb(255, 210, 0, 0.2);
+    transform-origin: right center;
+    transform: rotate(0deg);
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    border-radius: 4px;
+}
+
+#minute {
+    width: 48%;
+    height: 8px;
+    background: rgb(0, 94, 190, 0.8);
+    box-shadow:
+        0 0 6px rgb(76, 166, 255),
+        0 0 10px rgb(5, 110, 216, 0.8),
+        0 0 12px rgb(5, 110, 216, 0.4),
+        0 0 10px rgb(5, 110, 216, 0.2);
+
+    transform-origin: right center;
+    transform: rotate(0deg);
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    border-radius: 4px;
+}
+
+#second {
+    width: 55%;
+    height: 3px;
+    border: 1px solid red;
+    /* box-shadow: 
+        0 0 5px rgb(red, 0, 0),
+        0 0 25px rgba(red, 0, 0, 0.8),
+        0 0 25px rgba(red, 0, 0, 0.4),
+        0 0 25px rgba(red, 0, 0, 0.2); */
+    box-shadow:
+        0 0 5px red,
+        0 0 10px rgb(143, 26, 26, 0.8),
+        0 0 15px rgb(143, 26, 26, 0.4),
+        0 0 10px rgb(143, 26, 26, 0.2);
+
+    background: linear-gradient(90deg, black, red);
+
+    transform-origin: right center;
+    transform: rotate(0deg);
+
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    border-radius: 2px;
+}
+
+#time {
+    width: 505px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    right: -1.5%;
+    transform: translateY(-5%);
+
+}
+
+#APM {
+    font-family: 'Turret Road', cursive;
+    font-size: 25px;
+    color: rgb(194, 194, 195);
+    float: left;
+    padding-top: 7px;
+    margin-right: 40px;
+    text-shadow: 3px 8px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-reflect: below -10px linear-gradient(transparent, rgba(0, 0, 0, 0.5))
+}
+
+#tHour,
+#tMinute,
+#tSecond,
+#dot1,
+#dot2 {
+    font-family: 'Turret Road', cursive;
+    font-size: 30px;
+    color: rgb(194, 194, 195);
+    float: left;
+    margin-right: 50px;
+    text-shadow: 3px 8px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-reflect: below -10px linear-gradient(transparent, rgba(0, 0, 0, 0.5))
+}
+
+#date {
+    width: 505px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-5%);
+}
+
+#month,
+#year {
+    font-family: 'Turret Road', cursive;
+    font-size: 30px;
+    color: rgb(194, 194, 195);
+    float: left;
+    margin-right: 45px;
+    text-shadow: 3px 8px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-reflect: below -10px linear-gradient(transparent, rgba(0, 0, 0, 0.5))
+}
+
+#day {
+    font-family: 'Turret Road', cursive;
+    font-size: 30px;
+    color: rgb(194, 194, 195);
+    float: left;
+    margin-right: 90px;
+    text-shadow: 3px 8px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-reflect: below -10px linear-gradient(transparent, rgba(0, 0, 0, 0.5))
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-minimal.min.css">
+    <link rel="stylesheet" href="./clock.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@300&family=Bungee+Hairline&family=Goldman:wght@400;700&family=Iceland&family=Righteous&family=Rubik+Glitch&family=Train+One&family=Turret+Road:wght@200;300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <div id="wrap">
+        <!-- <div id="wrap"></div> -->
+        <div class="clock">
+            <div id="minute"></div>
+            <div id="hour"></div>
+            <div id="second"></div>
+        </div>
+
+        <p id="tag">#StopWarInUkraine</p>
+        <div class="box">
+            <div class="death">Death</div>
+            <div class="odometer" id="odometer"></div>
+        </div>
+
+
+        <div id="date">
+            <div id="month"></div>
+            <div id="day"></div>
+            <div id="year"></div>
+        </div>
+
+
+        <div id="time">
+            <div id="APM">AM</div>
+            <div id="tHour"></div>
+            <div id="dot1">|</div>
+            <div id="tMinute"></div>
+            <div id="dot2">|</div>
+            <div id="tSecond"></div>
+        </div>
+    </div>
+
+    <script>
+        let tHour = document.getElementById('tHour')
+        let tMinute = document.getElementById('tMinute')
+        let tSecond = document.getElementById('tSecond')
+        let tAPM = document.getElementById('APM')
+
+        let dYear = document.getElementById('year')
+        let dMonth = document.getElementById('month')
+        let dDay = document.getElementById('day')
+
+        setInterval(() => {
+            const nowTime = new Date()
+            let tH = nowTime.getHours()
+            let tM = nowTime.getMinutes()
+            let tS = nowTime.getSeconds()
+
+            tHour.innerText = tH
+            tMinute.innerText = tM
+            tSecond.innerText = tS
+
+            let dY = nowTime.getFullYear()
+            let dMon = nowTime.getMonth()
+            let dD = nowTime.getDate()
+
+            var months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+
+            dYear.innerText = dY
+            dMonth.innerText = months[dMon]
+            dDay.innerText = dD
+
+
+            if (tH > 12) {
+                tHour.innerText = tH - 12
+                tAPM.innerText = 'PM'
+                if ((tH - 12) < 10) {
+                    tHour.innerText = '0' + (tH - 12)
+                }
+            }
+            if (tM < 10) {
+                tMinute.innerText = '0' + tM
+            }
+            if (tS < 10) {
+                tSecond.innerText = '0' + tS
+            }
+
+        }, 1000)
+
+
+    </script>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+    <script>
+        let odometer = document.getElementById('odometer')
+        odometer.style.color = 'white'
+        let value = 2558;
+
+        setInterval(() => {
+            value++
+            odometer.innerHTML = value;
+        }, 1000)
+    </script>
+
+    <script>
+        const elHour = document.getElementById('hour')
+        const elMinute = document.getElementById('minute')
+        const elSecond = document.getElementById('second')
+
+        setInterval(() => {
+            const clock = new Date()
+            elHour.style.transform = `rotate(${clock.getHours() * 30 + 90}deg)`
+            elMinute.style.transform = `rotate(${clock.getMinutes() * 6 + 90}deg)`
+            elSecond.style.transform = `rotate(${clock.getSeconds() * 6 + 90}deg)`
+        }, 1000)
+
+    </script>
+
+    </body>
+
+</html>
